@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>RMC Limpeza e Produtos</title>
+<meta name="description" content="RMC: limpeza profissional de condomínios e produtos de limpeza em Mongaguá, Itanhaém e região. Veja o antes e depois e peça uma demonstração.">
+<meta property="og:title" content="RMC Limpeza e Produtos">
+<meta property="og:description" content="Limpeza de condomínio com produto que não agride o piso. Veja o antes e depois.">
+<meta property="og:image" content="midia/fachada-depois.jpg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Figtree:wght@400;500;600&display=swap">
+<style>
+/* Layout: capa curta com a promessa do produto, depois um bloco por área do prédio com antes e depois lado a lado, fecha com o contato */
+:root{
+  --bg:#f3f6f6; --surface:#ffffff; --fg:#13262b; --muted:#566a70; --line:#d6e0e1;
+  --accent:#0b6e74; --accent-ink:#ffffff; --before:#8a5a2b; --after:#0b6e74;
+  --display:"Bricolage Grotesque",ui-sans-serif,system-ui,sans-serif;
+  --body:"Figtree",ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0d1a1d; --surface:#142629; --fg:#e6efef; --muted:#9fb3b6; --line:#24393d;
+  --accent:#4cc3c9; --accent-ink:#06282b; --before:#e0a46a; --after:#4cc3c9; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0d1a1d; --surface:#142629; --fg:#e6efef; --muted:#9fb3b6; --line:#24393d;
+  --accent:#4cc3c9; --accent-ink:#06282b; --before:#e0a46a; --after:#4cc3c9; color-scheme:dark}
+
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:16px;line-height:1.55}
+.wrap{max-width:980px;margin:0 auto;padding-inline:16px;padding-block:28px 56px;display:grid;gap:44px}
+h1,h2{font-family:var(--display);text-wrap:balance;margin:0;line-height:1.08}
+h1{font-size:clamp(2rem,6vw,3.2rem);font-weight:800;letter-spacing:-.01em}
+h2{font-size:clamp(1.35rem,3.6vw,1.8rem);font-weight:600}
+p{margin:0}
+.eyebrow{font-size:.78rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
+
+header{display:grid;gap:14px}
+header .lead{color:var(--muted);max-width:60ch;font-size:1.06rem}
+
+.promise{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:22px 20px;display:grid;gap:16px}
+.promise h2{font-size:1.25rem}
+.claims{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px 22px}
+.claims li{display:flex;gap:10px;align-items:flex-start;min-width:0}
+.claims svg{flex:none;margin-top:3px;color:var(--accent)}
+.seal{display:flex;flex-wrap:wrap;gap:8px}
+.seal span{border:1px solid var(--accent);color:var(--accent);border-radius:999px;padding:4px 12px;font-size:.85rem;font-weight:600}
+
+section.area{display:grid;gap:14px}
+.area-head{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
+.area-head p{color:var(--muted)}
+.pair{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.pair.tres{grid-template-columns:repeat(3,minmax(0,1fr))}
+figure{margin:0;position:relative;background:var(--surface);border-radius:10px;overflow:hidden;border:1px solid var(--line)}
+figure img,figure video{display:block;width:100%;aspect-ratio:3/4;object-fit:cover;background:var(--line)}
+figure.wide img{aspect-ratio:4/3}
+figure button{all:unset;cursor:zoom-in;display:block}
+figure button:focus-visible{outline:3px solid var(--accent);outline-offset:-3px}
+.tag{position:absolute;top:10px;left:10px;font-size:.75rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:4px 10px;border-radius:6px;pointer-events:none}
+.tag.before{background:var(--before);color:var(--bg)}
+.tag.after{background:var(--after);color:var(--bg)}
+figcaption{padding:8px 12px;font-size:.88rem;color:var(--muted)}
+
+.contact{background:var(--accent);color:var(--accent-ink);border-radius:14px;padding:26px 22px;display:grid;gap:14px}
+.contact h2{color:var(--accent-ink)}
+.contact .rows{display:grid;gap:8px}
+.contact .row{display:flex;flex-wrap:wrap;gap:6px 12px;align-items:center}
+.contact .label{font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;opacity:.8;min-width:90px}
+.contact .val{font-weight:600;font-size:1.1rem;user-select:all}
+.contact a{color:inherit}
+.btn{all:unset;cursor:pointer;font-size:.85rem;font-weight:600;border:1px solid currentColor;border-radius:999px;padding:3px 12px}
+.btn:focus-visible{outline:2px solid currentColor;outline-offset:2px}
+footer{color:var(--muted);font-size:.85rem}
+
+dialog{border:0;padding:0;background:transparent;max-width:96vw;max-height:94vh}
+dialog::backdrop{background:rgba(0,0,0,.86)}
+dialog img{display:block;max-width:96vw;max-height:90vh;object-fit:contain;border-radius:8px}
+dialog .close{all:unset;position:fixed;top:calc(12px + env(safe-area-inset-top,0px));right:14px;color:#fff;font-size:1rem;font-weight:600;cursor:pointer;background:rgba(0,0,0,.5);padding:6px 14px;border-radius:999px}
+@media (prefers-reduced-motion:no-preference){figure img{transition:transform .3s}figure button:hover img{transform:scale(1.02)}}
+@media (max-width:560px){.pair{gap:6px}.tag{top:6px;left:6px;font-size:.62rem;padding:3px 7px}figure{border-radius:8px}}
+
+.top{position:sticky;top:0;z-index:5;background:var(--bg);border-bottom:1px solid var(--line)}
+.top .in{max-width:980px;margin:0 auto;padding:10px 16px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.brand{font-family:var(--display);font-weight:800;font-size:1.25rem;color:var(--fg);text-decoration:none}
+.brand small{display:block;font-family:var(--body);font-weight:500;font-size:.72rem;color:var(--muted);letter-spacing:.06em;text-transform:uppercase}
+.top nav{display:flex;gap:14px;flex-wrap:wrap;font-size:.92rem}
+.top nav a{color:var(--fg);text-decoration:none;font-weight:500}
+.top nav a:hover{color:var(--accent)}
+.zap{display:inline-block;background:var(--accent);color:var(--accent-ink);font-weight:600;text-decoration:none;border-radius:999px;padding:10px 20px;width:fit-content}
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:12px}
+.box{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:20px;display:grid;gap:10px;align-content:start}
+.box h3{font-family:var(--display);font-weight:600;font-size:1.15rem;margin:0}
+.box ul{margin:0;padding-left:1.1em;display:grid;gap:4px}
+.box p{color:var(--muted);font-size:.92rem}
+.sec-title{display:grid;gap:6px}
+</style>
+<style>body{margin:0}img{max-width:100%}</style>
+</head>
+<body>
+<header class="top"><div class="in"><a class="brand" href="#">RMC<small>Limpeza e produtos</small></a><nav><a href="#servicos">Serviços</a><a href="#produtos">Produtos</a><a href="#antes-depois">Antes e depois</a><a href="#contato">Contato</a></nav></div></header>
+
+
+<div class="wrap">
+  <header>
+    <span class="eyebrow">RMC · Mongaguá, Itanhaém e região</span>
+    <h1>Limpeza de condomínio com produto que não agride o piso</h1>
+    <p class="lead">Fotos e vídeo de um trabalho real, antes e depois. Escada, hall de entrada, lateral, fachada e entrada do prédio, limpos com produtos especializados que a RMC fornece, comprados direto do fabricante.</p>
+    <a class="zap" href="https://wa.me/5513982137856" target="_blank" rel="noopener">Pedir orçamento no WhatsApp</a>
+  </header>
+
+  <div class="promise">
+    <h2>O que os produtos usados pela RMC garantem</h2>
+    <ul class="claims">
+      <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span>Não é abrasivo</span></li>
+      <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span>Não mancha</span></li>
+      <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span>Não agride a cerâmica nem o porcelanato</span></li>
+      <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span>Não agride o alumínio dos portões</span></li>
+      <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span>Não agride a pele</span></li>
+    </ul>
+    <div class="seal"><span>Atestado por químico</span><span>Com garantia</span></div>
+  </div>
+
+
+  <section class="area" id="servicos">
+    <div class="sec-title"><span class="eyebrow">Serviços</span><h2>Limpeza profissional</h2></div>
+    <div class="cols">
+      <div class="box"><h3>Condomínios e prédios</h3><ul><li>Escadas, hall de entrada e corredores</li><li>Fachada, muros e calçada</li><li>Remoção de ferrugem no piso</li><li>Revitalização de porta de elevador</li></ul><p>Antes de fechar, a RMC faz uma demonstração no piso do seu prédio.</p></div>
+      <div class="box"><h3>Casas e obras</h3><ul><li>Limpeza de piso</li><li>Borda de piscina e quintal</li><li>Limpeza pós-obra</li><li>Serviços personalizados</li></ul></div>
+    </div>
+  </section>
+
+  <section class="area" id="produtos">
+    <div class="sec-title"><span class="eyebrow">Produtos</span><h2>Produtos de limpeza que a RMC fornece</h2><p style="color:var(--muted)">Os mesmos produtos usados no serviço, comprados direto do fabricante.</p></div>
+    <div class="cols">
+      <div class="box"><h3>Pisos e superfícies</h3><ul><li>Cera auto brilho</li><li>Removedor de cera</li><li>Removedor de ferrugem</li><li>Produtos pesados para pós-obra</li></ul></div>
+      <div class="box"><h3>Metais, vidros e cozinha</h3><ul><li>Limpa inox e recuperador de alumínio</li><li>Limpa vidro</li><li>Removedor de gordura (limpa chapa)</li></ul></div>
+      <div class="box"><h3>Estofados e carro</h3><ul><li>Limpa estofados</li><li>Shampoo automotivo</li></ul></div>
+    </div>
+  </section>
+
+  <div class="sec-title" id="antes-depois"><span class="eyebrow">Antes e depois</span><h2>Trabalho real em condomínio</h2></div>
+  <section class="area" id="escada">
+    <div class="area-head"><h2>Escada</h2><p>Degraus de cerâmica</p></div>
+    <div class="pair tres">
+      <figure><button type="button" data-full="midia/escada-antes.jpg" aria-label="Ampliar escada antes"><img src="midia/escada-antes.jpg" alt="Escada antes da limpeza"></button><span class="tag before">Antes</span></figure>
+      <figure><button type="button" data-full="midia/escada-depois-1.jpg" aria-label="Ampliar escada depois"><img src="midia/escada-depois-1.jpg" alt="Escada depois da limpeza"></button><span class="tag after">Depois</span></figure>
+      <figure><button type="button" data-full="midia/escada-depois-2.jpg" aria-label="Ampliar escada depois, outro ângulo"><img src="midia/escada-depois-2.jpg" alt="Escada depois da limpeza, outro ângulo"></button><span class="tag after">Depois</span></figure>
+    </div>
+  </section>
+
+  <section class="area" id="hall">
+    <div class="area-head"><h2>Hall de entrada</h2><p>Vídeo do antes, durante a limpeza</p></div>
+    <div class="pair">
+      <figure><video src="midia/hall-antes.mp4" poster="midia/hall-antes-capa.jpg" controls playsinline muted preload="metadata" aria-label="Vídeo do hall de entrada antes da limpeza"></video><span class="tag before">Antes</span></figure>
+      <figure><button type="button" data-full="midia/hall-depois-1.jpg" aria-label="Ampliar hall depois"><img src="midia/hall-depois-1.jpg" alt="Hall de entrada depois da limpeza"></button><span class="tag after">Depois</span></figure>
+    </div>
+  </section>
+
+  <section class="area" id="lateral">
+    <div class="area-head"><h2>Lateral do prédio</h2><p>Corredor externo</p></div>
+    <div class="pair">
+      <figure><button type="button" data-full="midia/lateral-antes.jpg" aria-label="Ampliar lateral antes"><img src="midia/lateral-antes.jpg" alt="Lateral do prédio antes da limpeza"></button><span class="tag before">Antes</span></figure>
+      <figure><button type="button" data-full="midia/lateral-depois.jpg" aria-label="Ampliar lateral depois"><img src="midia/lateral-depois.jpg" alt="Lateral do prédio depois da limpeza"></button><span class="tag after">Depois</span></figure>
+    </div>
+  </section>
+
+  <section class="area" id="fachada">
+    <div class="area-head"><h2>Fachada</h2><p>Muro e calçada da frente</p></div>
+    <div class="pair">
+      <figure class="wide"><button type="button" data-full="midia/fachada-antes.jpg" aria-label="Ampliar fachada antes"><img src="midia/fachada-antes.jpg" alt="Fachada do prédio antes da limpeza"></button><span class="tag before">Antes</span></figure>
+      <figure class="wide"><button type="button" data-full="midia/fachada-depois.jpg" aria-label="Ampliar fachada depois"><img src="midia/fachada-depois.jpg" alt="Fachada do prédio depois da limpeza"></button><span class="tag after">Depois</span></figure>
+    </div>
+  </section>
+
+  <section class="area" id="entrada">
+    <div class="area-head"><h2>Entrada com ferrugem</h2><p>Mancha de ferrugem no piso da entrada</p></div>
+    <div class="pair">
+      <figure><button type="button" data-full="midia/entrada-antes.jpg" aria-label="Ampliar entrada antes"><img src="midia/entrada-antes.jpg" alt="Entrada com ferrugem antes da limpeza"></button><span class="tag before">Antes</span></figure>
+      <figure><button type="button" data-full="midia/entrada-depois.jpg" aria-label="Ampliar entrada depois"><img src="midia/entrada-depois.jpg" alt="Entrada depois da limpeza"></button><span class="tag after">Depois</span></figure>
+    </div>
+  </section>
+
+  <div class="contact" id="contato">
+    <h2>Agende uma demonstração no seu condomínio</h2>
+    <p>A RMC mostra o produto funcionando no piso do seu prédio, antes de fechar o serviço.</p>
+    <div class="rows">
+      <div class="row"><span class="label">WhatsApp</span><a class="val" href="https://wa.me/5513982137856" target="_blank" rel="noopener">(13) 98213-7856</a><button class="btn" type="button" data-copy="(13) 98213-7856">Copiar</button></div>
+      <div class="row"><span class="label">Instagram</span><a class="val" href="https://www.instagram.com/produtosdelimpeza.rmc/" target="_blank" rel="noopener">@produtosdelimpeza.rmc</a></div>
+    </div>
+  </div>
+
+  <footer>RMC · limpeza profissional e produtos de limpeza · Mongaguá, Itanhaém e região</footer>
+</div>
+
+<dialog id="zoom"><button class="close" type="button" id="zoomClose">Fechar</button><img id="zoomImg" alt=""></dialog>
+
+<script>
+const dlg=document.getElementById('zoom'),zi=document.getElementById('zoomImg');
+document.querySelectorAll('[data-full]').forEach(b=>b.addEventListener('click',()=>{
+  zi.src=b.dataset.full;zi.alt=b.querySelector('img').alt;
+  if(dlg.showModal)dlg.showModal();
+}));
+document.getElementById('zoomClose').addEventListener('click',()=>dlg.close());
+dlg.addEventListener('click',e=>{if(e.target===dlg)dlg.close()});
+document.querySelectorAll('[data-copy]').forEach(b=>b.addEventListener('click',()=>{
+  const t=b.dataset.copy;
+  navigator.clipboard.writeText(t).then(()=>{b.textContent='Copiado'},()=>{b.textContent=t});
+  setTimeout(()=>{b.textContent='Copiar'},2000);
+}));
+</script>
+
+</body>
+</html>
